@@ -29,3 +29,6 @@ ddev craft setup/keys
 
 # import dump
 ddev import-db --file=seed.sql
+
+# start webpack
+ddev npm run watch
