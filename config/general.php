@@ -41,8 +41,9 @@ return [
         'resourceBasePath' => dirname(__DIR__) . '/web/cpresources',
         'maxSlugIncrement' => 100,
         'aliases' => [
-            '@web' => App::env('DEFAULT_SITE_URL'),
-            '@assetBaseUrl' => App::env('S3_BASE_URL') ?: App::env('DEFAULT_SITE_URL'),
+            // Use PRIMARY_SITE_URL since this is automatically set by DDEV (also for gitpod URLs)
+            '@web' => App::env('PRIMARY_SITE_URL'),
+            '@assetBaseUrl' => App::env('S3_BASE_URL') ?: App::env('PRIMARY_SITE_URL'),
         ],
     ],
     'dev' => [
